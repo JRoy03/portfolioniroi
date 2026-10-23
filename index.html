@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My fallforyou     - John Roy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+    <nav>
+
+        <div class="logo">
+            MyFallforyou
+        </div>
+
+        <ul>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+    <header class="hero">
+
+        <!-- PROFILE PICTURE -->
+        <div class="profile-container">
+
+            <img
+                src="anime.jpg"
+                alt="John Roy Profile Picture"
+                class="profile-pic"
+            >
+
+        </div>
+
+
+        <h1>
+            Tinola sa Papaya, Mango!
+        </h1>
+
+        <p>
+            Web Developer & Designer
+        </p>
+
+        <p class="course">
+            Bachelor of Science in Information Technology
+        </p>
+
+        <p class="school">
+            University of Mindanao Digos College
+        </p>
+
+
+        <a href="#projects" class="btn">
+            View My Work
+        </a>
+
+
+        <a
+            href="https://github.com/JRoy03/PortflioNiRhoi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn github-btn"
+        >
+            🐙 GitHub
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+    <section id="about" class="about">
+
+        <h2 class="gradient-text">
+            About Me
+        </h2>
+
+        <p>
+            I am a passionate beginner web developer who loves building
+            clean, responsive, and user-friendly websites. I enjoy learning
+            new technologies and turning ideas into reality through code.
+        </p>
+
+
+        <div class="education">
+
+            <h3 class="gradient-text">
+                Bachelor of Science in Information Technology
+            </h3>
+
+            <p>
+                University of Mindanao Digos College
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+    <section id="projects">
+
+        <h2 class="gradient-text">
+            My Projects
+        </h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <h3>
+                    Project One
+                </h3>
+
+                <p>
+                    A brief description of your first project goes here.
+                    Built using HTML and CSS.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Project Two
+                </h3>
+
+                <p>
+                    A brief description of your second project goes here.
+                    Showcasing your coding skills.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Project Three
+                </h3>
+
+                <p>
+                    A brief description of your third project goes here.
+                    Highlighting a unique feature.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+    <section id="contact" class="contact">
+
+        <h2 class="gradient-text">
+            Get In Touch
+        </h2>
+
+        <p>
+            Feel free to reach out for collaborations
+            or just a friendly hello!
+        </p>
+
+        <p>
+            Email:
+            <strong>
+                jdaulong03@gmail.com
+            </strong>
+        </p>
+
+        <form class="contact-form" id="contact-form">
+            <label for="contact-name">Your name</label>
+            <input
+                type="text"
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                required
+            >
+
+            <label for="contact-email">Your email</label>
+            <input
+                type="email"
+                id="contact-email"
+                name="email"
+                autocomplete="email"
+                required
+            >
+
+            <label for="contact-message">Message</label>
+            <textarea
+                id="contact-message"
+                name="message"
+                rows="6"
+                required
+            ></textarea>
+
+            <button type="submit" class="contact-submit">Send Message</button>
+            <p class="contact-note" id="contact-status" aria-live="polite">
+                Your message will be sent directly to my email.
+            </p>
+            <p class="contact-fallback" id="contact-fallback" hidden>
+                Create a draft using
+                <a id="gmail-draft-link" href="#" target="_blank" rel="noopener noreferrer">Gmail</a>
+                or your
+                <a id="mailto-draft-link" href="#">default email app</a>.
+                Review it and press Send.
+            </p>
+        </form>
+
+        <a
+            href="https://github.com/JRoy03/PortflioNiRhoi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link"
+        >
+            🐙 Visit My GitHub
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+    <footer>
+
+        <p>
+            &copy; 2026
+            <span>John Roy</span>.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById("contact-form");
+        const contactStatus = document.getElementById("contact-status");
+        const contactFallback = document.getElementById("contact-fallback");
+
+        function showEmailDraftOptions(formData) {
+            const name = formData.get("name");
+            const email = formData.get("email");
+            const message = formData.get("message");
+            const subject = `Portfolio message from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            const gmailParams = new URLSearchParams({
+                view: "cm",
+                fs: "1",
+                to: "jdaulong03@gmail.com",
+                su: subject,
+                body
+            });
+
+            document.getElementById("gmail-draft-link").href =
+                `https://mail.google.com/mail/?${gmailParams.toString()}`;
+            document.getElementById("mailto-draft-link").href =
+                `mailto:jdaulong03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            contactStatus.textContent =
+                "The website email service is unavailable. Choose an option below to create a draft.";
+            contactFallback.hidden = false;
+        }
+
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const formData = new FormData(contactForm);
+            submitButton.disabled = true;
+            contactStatus.textContent = "Sending your message...";
+
+            try {
+                try {
+                    const response = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(Object.fromEntries(formData))
+                    });
+
+                    const result = await response.json();
+                    if (!response.ok) {
+                        if (response.status >= 500) {
+                            showEmailDraftOptions(formData);
+                            return;
+                        }
+                        throw new Error(result.error || "Your message could not be sent.");
+                    }
+
+                    contactForm.reset();
+                    contactFallback.hidden = true;
+                    contactStatus.textContent = "Thanks! Your message has been sent.";
+                } catch (error) {
+                    if (error instanceof TypeError) {
+                        showEmailDraftOptions(formData);
+                    } else {
+                        throw error;
+                    }
+                }
+            } catch (error) {
+                contactStatus.textContent =
+                    error.message || "Unable to send your message. Please try again later.";
+            } finally {
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+
+</body>
+</html>
